@@ -1,0 +1,14 @@
+{
+  "name": "get-help-to-retrain-smoke-tests",
+  "version": "1.0.0",
+  "description": "Smoke tests for the get-help-to-retrain DfE digital service",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "author": "Steve Walton",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^3.4.1"
+  }
+}
