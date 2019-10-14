@@ -9,6 +9,8 @@ before(function () {
     Cypress.Cookies.defaults({
         whitelist: '_get_help_to_retrain_session'
     });
+
+    cy.contains('Accept cookies').click();
 });
 
 beforeEach(function() {
