@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://get-help-to-retrain-pr-249.herokuapp.com/",
+  "baseUrl": "https://qa.nrs-ghtr.org.uk/",
   "accessibility": false,
   "reporter": "spec",
   "reporterEnabled": "spec",
