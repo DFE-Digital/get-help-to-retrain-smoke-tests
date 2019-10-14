@@ -16,8 +16,8 @@ Running tests interactively can be done with the following commands:
 
 `npm install`
 
-`./node_modules/.bin/cypress open`
+`npm run cypress:open`
 
 Running from CI/non-interactively:
 
-`./node_modules/.bin/cypress run`
+`npm run cypress:run`
