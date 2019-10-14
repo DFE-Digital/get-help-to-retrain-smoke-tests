@@ -2,3 +2,5 @@ node_modules
 .idea
 cypress/screenshots
 cypress/videos
+results/*
+test-results.xml
