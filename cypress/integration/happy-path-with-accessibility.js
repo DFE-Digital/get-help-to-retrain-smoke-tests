@@ -96,6 +96,10 @@ describe('Get help to retrain smoke test', function() {
         cy.get('[data-cy=find-a-english-course-btn]').click();
     });
 
+    it('should allow me to find other ways to change jobs', function() {
+        cy.contains('Get help changing jobs').click();
+        checkAccessibility();
+    })
    it('should show me the accessibility issues', function() {
       if(specViolations.length > 0) throw specViolations;
    });
