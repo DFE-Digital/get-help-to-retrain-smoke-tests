@@ -56,12 +56,12 @@ describe('Get help to retrain smoke test', function() {
        cy.get('[data-cy=pid-submit-btn]').click();
    });
    it('should take me to the GHtR task list', function() {
-       // checkAccessibility();
+       checkAccessibility();
        cy.get('h1').should('contain', 'Get help to retrain');
 });
 
    it('should let me check my existing skills', function() {
-       cy.get('[data-cy=tasklist-check-your-skills-link]').click();
+       cy.get('[data-cy=taskli st-check-your-skills-link]').click();
        checkAccessibility();
        cy.get('[data-cy=search-field-submit-btn]').click();
        checkAccessibility();
