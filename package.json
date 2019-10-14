@@ -4,7 +4,8 @@
   "description": "Smoke tests for the get-help-to-retrain DfE digital service",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "author": "Steve Walton",
   "license": "MIT",

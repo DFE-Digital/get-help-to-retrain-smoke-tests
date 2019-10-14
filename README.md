@@ -16,15 +16,15 @@ Running tests interactively can be done with the following commands:
 
 `npm install`
 
-`./node_modules/.bin/cypress open`
+`npm run cypress:open`
 
 Running e2e journey:
 
 The E2E journey integrates Axe accessibility audits.  The audits can be enabled or disabled with the 
 accessibility field in the `cypress.json`.
 
-`./node_modules/.bin/cypress run --spec "cypress/integration/happy-path-with-accessibility.js"`
+`npm run cypress:run --spec "cypress/integration/happy-path-with-accessibility.js"`
 
 Running from CI/non-interactively:
 
-`./node_modules/.bin/cypress run --spec "cypress/integration/smoke-test.js"`
+`npm run cypress:run --spec "cypress/integration/smoke-test.js"`
