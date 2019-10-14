@@ -1,3 +1,10 @@
 {
-  "baseUrl": "https://qa.nrs-ghtr.org.uk/"
+  "baseUrl": "https://get-help-to-retrain-pr-249.herokuapp.com/",
+  "accessibility": false,
+  "reporter": "spec",
+  "reporterEnabled": "spec",
+  "reporterOptions": {
+    "mochaFile": "results/test-output-[hash].xml",
+    "toConsole": true
+  }
 }
