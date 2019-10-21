@@ -5,6 +5,6 @@
   "reporterEnabled": "junit,spec",
   "reporterOptions": {
     "mochaFile": "results/test-output-[hash].xml",
-    "toConsole": false
+    "toConsole": true
   }
 }
