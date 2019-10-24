@@ -2,7 +2,7 @@
   "baseUrl": "https://qa.nrs-ghtr.org.uk/",
   "accessibility": false,
   "reporter": "spec",
-  "reporterEnabled": "spec",
+  "reporterEnabled": "junit,spec",
   "reporterOptions": {
     "mochaFile": "results/test-output-[hash].xml",
     "toConsole": true
