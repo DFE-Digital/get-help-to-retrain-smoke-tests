@@ -18,6 +18,6 @@ describe('Get help to retrain smoke test', function() {
         cy.get('[data-cy=pid-dob-year-field]').type("1111");
         cy.get('[data-cy=pid-gender-male-radio-btn]').click();
         cy.get('[data-cy=pid-submit-btn]').click();
-        cy.get('h1').should('contain', 'Get help to retrain');
+        cy.get('h1').should('contain', 'Step-by-step guide to changing types of work');
     });
 });
