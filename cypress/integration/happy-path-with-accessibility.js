@@ -34,6 +34,7 @@ function violationsCallBack(violations) {
 
 function checkAccessibility() {
   if(Cypress.config('accessibility')) {
+    cy.injectAxe();
     cy.checkA11y(null, null, violationsCallBack);
   }
 }
@@ -41,13 +42,19 @@ function checkAccessibility() {
 describe('Get help to retrain smoke test', function() {
   it('should open the service landing page', function() {
     checkAccessibility();
-    cy.get('[data-cy=start-now-btn]').click();
   });
 
-  it('should allow me to submit personal information', function() {
+  it('should allow me to view the personal information form', function() {
+    cy.get('[data-cy=start-now-btn]').click();
     checkAccessibility();
+  });
+
+  it('should allow me to see form errors on personal information form', function() {
     cy.get('[data-cy=pid-submit-btn]').click();
     checkAccessibility();
+  });
+
+  it('should allow me to submit personal information and navigate to task list', function() {
     cy.get('[data-cy=pid-first-name-field]').type("test");
     cy.get('[data-cy=pid-surname-field]').type("test");
     cy.get('[data-cy=pid-postcode-field]').type(this.postcodes.default);
@@ -56,56 +63,63 @@ describe('Get help to retrain smoke test', function() {
     cy.get('[data-cy=pid-dob-year-field]').type("1111");
     cy.get('[data-cy=pid-gender-male-radio-btn]').click();
     cy.get('[data-cy=pid-submit-btn]').click();
-  });
-
-  it('should take me to the GHtR task list', function() {
     checkAccessibility();
-    cy.get('h1').should('contain', 'Step-by-step guide to changing types of work');
   });
 
-  it('should let me check my existing skills', function() {
+  it('should allow me to navigate to check my existing skills', function() {
     cy.get('[data-cy=tasklist-check-your-skills-link]').click();
     checkAccessibility();
-    cy.get('[data-cy=search-field-submit-btn]').click();
-    checkAccessibility();
-    cy.get('[data-cy=search-field]').type("test");
-    cy.get('[data-cy=search-field-submit-btn]').click();
   });
 
-  it('should let me choose my current job', function() {
-   checkAccessibility();
-   cy.contains('Computer games tester').click();
- });
+
+  it('should allow me to see form errors on check my existing skills', function() {
+    cy.get('[data-cy=search-field-submit-btn]').click();
+    checkAccessibility();
+  });
+
+  it('should allow me to check my existing skills', function() {
+    cy.get('[data-cy=search-field]').type("test");
+    cy.get('[data-cy=search-field-submit-btn]').click();
+    checkAccessibility();
+  });
+
+  it('should allow me to choose my current job', function() {
+    cy.contains('Computer games tester').click();
+    checkAccessibility();
+  });
 
   it('should allow me to select my skills', function() {
-    checkAccessibility();
     cy.get('[data-cy=select-skills-btn]').click();
     checkAccessibility();
-    cy.get('[data-cy=find-out-what-you-can-do-btn]').click();
   });
 
   it('should show me the types of job I can do with my skills', function() {
+    cy.get('[data-cy=find-out-what-you-can-do-btn]').click();
     checkAccessibility();
-    cy.contains('Web content manager').click();
+
   });
 
-  it('should show me what a typical job would involve, and target a job', function() {
+  it('should show me what a typical job would involve', function() {
+    cy.contains('Web content manager').click();
     checkAccessibility();
+  });
+
+  it('should allow me to target a job', function() {
     cy.contains('Target this type of work').click();
+    checkAccessibility();
   });
 
   it('should allow me to choose training options', function() {
-    checkAccessibility();
     cy.contains('Continue').click();
+    checkAccessibility();
   });
 
-  it('should allow me to choose job hunting advice', function() {
-    checkAccessibility();
+  it('should allow me to choose job hunting advice and navigate to action plan', function() {
     cy.contains('Continue').click();
+    checkAccessibility();
   });
 
   it('should allow me to find jobs near me', function() {
-    checkAccessibility();
     cy.contains('Show jobs near me').click();
     checkAccessibility();
   })
