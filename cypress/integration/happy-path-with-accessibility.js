@@ -114,6 +114,11 @@ describe('Get help to retrain smoke test', function() {
     checkAccessibility();
   });
 
+  it('should allow me to choose computer skills training options', function() {
+    cy.contains('Continue').click();
+    checkAccessibility();
+  });
+
   it('should allow me to choose job hunting advice and navigate to action plan', function() {
     cy.contains('Continue').click();
     checkAccessibility();
