@@ -1,6 +1,6 @@
 {
   "baseUrl": "https://qa.nrs-ghtr.org.uk/",
-  "accessibility": false,
+  "accessibility": true,
   "reporter": "spec",
   "reporterEnabled": "junit,spec",
   "reporterOptions": {

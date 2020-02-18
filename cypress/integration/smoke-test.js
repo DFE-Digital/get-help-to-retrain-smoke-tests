@@ -5,6 +5,11 @@ beforeEach(function () {
     });
 })
 
+before(function() {
+    cy.clearCookie('_get_help_to_retrain_session');
+    cy.clearLocalStorage();
+})
+
 describe('Get help to retrain smoke test', function() {
     it('should open the service landing page, submits PID information and display results', function() {
         cy.visit('/');

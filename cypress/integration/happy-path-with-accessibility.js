@@ -96,7 +96,6 @@ describe('Get help to retrain smoke test', function() {
   it('should show me the types of job I can do with my skills', function() {
     cy.get('[data-cy=find-out-what-you-can-do-btn]').click();
     checkAccessibility();
-
   });
 
   it('should show me what a typical job would involve', function() {
@@ -110,16 +109,22 @@ describe('Get help to retrain smoke test', function() {
   });
 
   it('should allow me to choose training options', function() {
+    cy.get('[id="training_english_skills"]').check()
+    cy.get('[id="training_math_skills"]').check()
     cy.contains('Continue').click();
     checkAccessibility();
   });
 
   it('should allow me to choose computer skills training options', function() {
+    cy.get('[id="it_training_computer_skills"]').check()   
     cy.contains('Continue').click();
     checkAccessibility();
   });
 
   it('should allow me to choose job hunting advice and navigate to action plan', function() {
+    cy.get('[id="job_hunting_cv"]').check();
+    cy.get('[id="job_hunting_cover_letter"').check();
+    cy.get('[id="job_hunting_interviews"]').check(); 
     cy.contains('Continue').click();
     checkAccessibility();
   });
@@ -127,7 +132,36 @@ describe('Get help to retrain smoke test', function() {
   it('should allow me to find jobs near me', function() {
     cy.contains('Show jobs near me').click();
     checkAccessibility();
-  })
+  });
+
+  it('should allow me to find an maths course', function() {
+    cy.go('back')
+    cy.contains('Find a maths course').click()
+    checkAccessibility();
+  });
+
+  it('should allow me to find an English course', function() {
+    cy.go('back')
+    cy.contains('Find an English course').click()
+    checkAccessibility();
+  });
+
+  it('should allow me to find local schemes and offers', function() {
+    cy.go('back')
+    cy.contains('Show me local offers').click()
+    checkAccessibility();
+  });
+
+  it('should allow me to save my results', function() {
+    cy.get('a[href="/save-your-results"]').click()
+    cy.get('[id="email"]').type('test@test.com')
+    checkAccessibility();
+  });
+
+  it('should allow me to see I have saved my results', function() {
+    cy.contains('Save your progress').click()
+    checkAccessibility();
+  });
 
   it('should show me the accessibility issues', function() {
     if(specViolations.length > 0) throw specViolations;
