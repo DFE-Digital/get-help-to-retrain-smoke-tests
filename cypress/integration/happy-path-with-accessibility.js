@@ -115,13 +115,13 @@ describe('Get help to retrain smoke test', function() {
     checkAccessibility();
   });
 
-  it('should allow me to choose job hunting advice', function() {
+  it('should allow me to choose computer skills training options', function() {
     cy.get('[id="it_training_computer_skills"]').check()   
     cy.contains('Continue').click();
     checkAccessibility();
   });
 
-  it('Navigate to action plan', function() {
+  it('should allow me to choose job hunting advice and navigate to action plan', function() {
     cy.get('[id="job_hunting_cv"]').check();
     cy.get('[id="job_hunting_cover_letter"').check();
     cy.get('[id="job_hunting_interviews"]').check(); 
