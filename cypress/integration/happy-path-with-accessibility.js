@@ -158,15 +158,15 @@ describe('Get help to retrain smoke test', function() {
     checkAccessibility();
   });
   
-  it('should allow me to get cover letter advice', function() {
+   it('should allow me to get interview advice', function() {
     cy.go('back')
-    cy.contains('Get cover letter advice').click()
+    cy.contains('Get interview advice').click()
     checkAccessibility();
   });
 
-  it('should allow me to get interview advice', function() {
+  it('should allow me to find local schemes and offers', function() {
     cy.go('back')
-    cy.contains('Get interview advice').click()
+    cy.contains('Show me local offers').click()
     checkAccessibility();
   });
 
