@@ -135,31 +135,49 @@ describe('Get help to retrain smoke test', function() {
   });
 
   it('should allow me to find an maths course', function() {
-    cy.go('back')
-    cy.contains('Find a maths course').click()
+    cy.go('back');
+    cy.contains('Find a maths course').click();
     checkAccessibility();
   });
 
   it('should allow me to find an English course', function() {
-    cy.go('back')
-    cy.contains('Find an English course').click()
+    cy.go('back');
+    cy.contains('Find an English course').click();
+    checkAccessibility();
+  });
+
+  it('should allow me to get CV advice', function() {
+    cy.go('back');
+    cy.contains('Get CV advice').click();
+    checkAccessibility();
+  });
+
+  it('should allow me to get cover letter advice', function() {
+    cy.go('back');
+    cy.contains('Get cover letter advice').click();
+    checkAccessibility();
+  });
+  
+   it('should allow me to get interview advice', function() {
+    cy.go('back');
+    cy.contains('Get interview advice').click();
     checkAccessibility();
   });
 
   it('should allow me to find local schemes and offers', function() {
-    cy.go('back')
-    cy.contains('Show me local offers').click()
+    cy.go('back');
+    cy.contains('Show me local offers').click();
     checkAccessibility();
   });
 
   it('should allow me to save my results', function() {
-    cy.get('a[href="/save-your-results"]').click()
-    cy.get('[id="email"]').type('test@test.com')
+    cy.get('a[href="/save-your-results"]').click();
+    cy.get('[id="email"]').type('test@test.com');
     checkAccessibility();
   });
 
   it('should allow me to see I have saved my results', function() {
-    cy.contains('Save your progress').click()
+    cy.contains('Save your progress').click();
     checkAccessibility();
   });
 
