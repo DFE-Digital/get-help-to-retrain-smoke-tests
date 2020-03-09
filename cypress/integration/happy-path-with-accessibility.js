@@ -103,8 +103,8 @@ describe('Get help to retrain smoke test', function() {
     checkAccessibility();
   });
 
-  it('should allow me to target a job', function() {
-    cy.contains('Target this type of work').click();
+  it('should allow me to select a job', function() {
+    cy.get('input[value="Select this type of work"]').click();
     checkAccessibility();
   });
 
