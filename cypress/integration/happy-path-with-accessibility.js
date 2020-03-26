@@ -7,10 +7,10 @@ before(function () {
   cy.log("Lets get started");
   cy.visit('/');
   Cypress.Cookies.defaults({
-    whitelist: ['_get_help_to_retrain_session', 'seen_cookie_message']
+    whitelist: ['_get_help_to_retrain_session']
   });
 
-  cy.contains('Accept cookies').click();
+  cy.contains('Accept necessary cookies only').click();
 });
 
 beforeEach(function() {
@@ -116,7 +116,7 @@ describe('Get help to retrain smoke test', function() {
   });
 
   it('should allow me to choose computer skills training options', function() {
-    cy.get('[id="it_training_computer_skills"]').check()   
+    cy.get('[id="it_training_computer_skills"]').check()
     cy.contains('Continue').click();
     checkAccessibility();
   });
@@ -124,7 +124,7 @@ describe('Get help to retrain smoke test', function() {
   it('should allow me to choose job hunting advice and navigate to action plan', function() {
     cy.get('[id="job_hunting_cv"]').check();
     cy.get('[id="job_hunting_cover_letter"').check();
-    cy.get('[id="job_hunting_interviews"]').check(); 
+    cy.get('[id="job_hunting_interviews"]').check();
     cy.contains('Continue').click();
     checkAccessibility();
   });
@@ -157,7 +157,7 @@ describe('Get help to retrain smoke test', function() {
     cy.contains('Get cover letter advice').click();
     checkAccessibility();
   });
-  
+
    it('should allow me to get interview advice', function() {
     cy.go('back');
     cy.contains('Get interview advice').click();
