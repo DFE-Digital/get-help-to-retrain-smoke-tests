@@ -1,7 +1,7 @@
 beforeEach(function () {
     cy.fixture('postcodes.json').as('postcodes')
     Cypress.Cookies.defaults({
-        whitelist: ['_get_help_to_retrain_session', 'seen_cookie_message']
+        whitelist: ['_get_help_to_retrain_session']
     });
 })
 
@@ -13,7 +13,7 @@ before(function() {
 describe('Get help to retrain smoke test', function() {
     it('should open the service landing page, submits PID information and display results', function() {
         cy.visit('/');
-        cy.contains('Accept cookies').click();
+        cy.contains('Accept necessary cookies only').click();
 
         cy.get('[data-cy=start-now-btn]').click();
         cy.get('[data-cy=pid-first-name-field]').type("test");
