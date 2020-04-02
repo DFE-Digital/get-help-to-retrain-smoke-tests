@@ -78,7 +78,7 @@ describe('Get help to retrain smoke test', function() {
   });
 
   it('should allow me to check my existing skills', function() {
-    cy.get('[data-cy=search-field]').type("test");
+    cy.get('[data-cy=search-field]').type("Computer games tester");
     cy.get('[data-cy=search-field-submit-btn]').click();
     checkAccessibility();
   });
@@ -171,13 +171,13 @@ describe('Get help to retrain smoke test', function() {
   });
 
   it('should allow me to save my results', function() {
-    cy.get('a[href="/save-your-results"]').click();
+    cy.get('a[href="/save-your-progress"]').click();
     cy.get('[id="email"]').type('test@test.com');
     checkAccessibility();
   });
 
   it('should allow me to see I have saved my results', function() {
-    cy.contains('Save your progress').click();
+    cy.contains('button', 'Save your progress').click();
     checkAccessibility();
   });
 
