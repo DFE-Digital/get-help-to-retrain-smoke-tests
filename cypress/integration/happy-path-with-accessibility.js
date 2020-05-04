@@ -60,7 +60,7 @@ describe('Get help to retrain smoke test', function() {
     cy.get('[data-cy=pid-postcode-field]').type(this.postcodes.default);
     cy.get('[data-cy=pid-dob-day-field]').type("1");
     cy.get('[data-cy=pid-dob-month-field]').type("11");
-    cy.get('[data-cy=pid-dob-year-field]').type("1111");
+    cy.get('[data-cy=pid-dob-year-field]').type("2000");
     cy.get('[data-cy=pid-gender-male-radio-btn]').click();
     cy.get('[data-cy=pid-submit-btn]').click();
     checkAccessibility();
@@ -130,7 +130,7 @@ describe('Get help to retrain smoke test', function() {
   });
 
   it('should allow me to find jobs near me', function() {
-    cy.contains('Show jobs near me').click();
+    cy.contains('Show jobs near you').click();
     checkAccessibility();
   });
 
@@ -166,7 +166,7 @@ describe('Get help to retrain smoke test', function() {
 
   it('should allow me to find local schemes and offers', function() {
     cy.go('back');
-    cy.contains('Show me local offers').click();
+    cy.contains('See local offers').click();
     checkAccessibility();
   });
 
